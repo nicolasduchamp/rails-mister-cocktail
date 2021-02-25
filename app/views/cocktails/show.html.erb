@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+
+  <div class="cards mt-5">
+    <% @cocktail.doses.each do |dose| %>
+      <%= dose.description %>
+      <%= link_to dose_path(dose), method: :delete, data: {confirm: "Are you sure ?"},class: "card-remove-link" do %>
+        <i class="fas fa-fire"></i>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+</div>
