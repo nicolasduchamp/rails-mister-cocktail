@@ -1,16 +1,23 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.itl.cat/pngfile/big/260-2608254_martini-cocktail-olives-splash-hd-wallpapers-widescreen-high.jpg)">
 <h1>Cocktails</h1>
+</div>
+
+<div class="container">
 
 <p>Name</p>
 <p colspan="3"></p>
 
-<ul>
 <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %>
+  <div class="card-product">
+   <div class="card-product-infos">
+    <%= cocktail.name %>
     <p><%= link_to 'Show', cocktail %></p>
     <p><%= link_to 'Edit', edit_cocktail_path(cocktail) %></p>
     <p><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </li>
+   </div>
+  </div>
   <% end %>
-</ul>
 
 <%= link_to 'New Cocktail', new_cocktail_path %>
+
+</div>

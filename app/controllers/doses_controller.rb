@@ -8,7 +8,7 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
       @dose = Dose.new(dose_params)
         @dose.cocktail = @cocktail
-        @ingredient = Ingredient.find(params[:dose][:ingredient])
+        @ingredient = Ingredient.find(params[:dose][:ingredient_id])
         @dose.ingredient = @ingredient
         if @dose.save
           redirect_to @cocktail
